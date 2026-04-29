@@ -1,0 +1,112 @@
+/* Universal Styles */
+
+body {
+  background-image: url("https://img.freepik.com/free-vector/white-abstract-background-design_361591-1245.jpg");
+  background-size: cover;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Navigation */
+
+nav {
+  text-align: center;
+}
+
+nav img {
+  display: block;
+}
+
+nav span {
+  display: block;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+
+nav a {
+  color: #666666;
+}
+
+/* Content Container */
+
+.content {
+  width: 100%;
+}
+
+/* Content Header */
+
+header {
+  background-image: url("https://freerangestock.com/sample/125964/grilled-burger-meat-.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+header h1 {
+  background-color: #b81f00;
+  color: #FFF;
+  font-family: 'Oswald', sans-serif;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 40px;
+  width: 68%;
+}
+
+/* Content Body */
+
+.content main {
+  width: 90%;
+}
+
+main p {
+  color: #333333;
+  font-weight: 100;
+  line-height: 34px;
+  width: 90%;
+  margin-top: 18px;
+}
+
+/* Content Button */
+
+.button {
+  border-radius: 4px;
+  color: #a72700;
+  display: block;
+  font-weight: 700;
+}
+
+.button:hover {
+  background-color: #aa0505;
+  border: 1px solid #aa0505;
+  color: #FFF;
+}
+
+/* Content Nutrition */
+
+ul.nutrition {
+}
+
+ul.nutrition li {
+  display: inline-block;
+  background-color: #aa0505;
+  list-style: none;
+}
+
+.nutrition .category {
+  color: white;
+  font-weight: 100;
+  letter-spacing: 2px;
+  display: block;
+}
+
+.nutrition .value {
+  color: white;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}

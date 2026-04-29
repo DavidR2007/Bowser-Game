@@ -1,0 +1,104 @@
+/* Exemple */
+/* selection {
+    propietat: valor;
+} */
+
+/* Reset bàsic */
+/* Més informació: https://vocal.media/01/universal-and-type-selectors-the-essential-tools-for-styling-your-web-pages */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+== abans ==
+- box-sizing
+
+== llista de propietats ==
+- font-family
+- font-size: 1.3rem;
+
+- unitats: px, rem, %, vh, vw
+(
+    px: píxels, 
+    rem: root element font size, 
+    %: percentatge, 
+    vh: viewport height, 
+    vw: viewport width
+)
+
+- background-color
+- color
+
+- text-align
+
+- width
+- height
+
+- padding
+- border
+- margin
+
+*/
+
+/* Cos general */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: rgb(191, 151, 64);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Contingut principal */
+main {
+  width: 80%;
+  margin: 2rem auto;
+}
+
+aside {
+  background-color: rgb(245, 215, 150);
+  margin-bottom: 2vh;
+
+  padding: 2rem;
+  font-style: italic;
+}
+
+section header {
+  background-color: rgb(124, 85, 0);
+  border-radius: 14px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  background-color: #222;
+  color: white;
+
+  padding: 2rem;
+}
+
+/* Articles */
+article {
+  background-color: white;
+  padding: 1.5rem;
+
+  /* marge superior i inferior */
+  margin-block: 2rem; 
+  
+  /* opcional */
+  border-radius: 8px;
+}
+
+/* Títols */
+h2 {
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Blog de Rubiks</title>
+
+        <!-- Elements de SEO (per exemple: per a Google) -->
+        <!-- https://developers.google.com/search/docs/crawling-indexing/special-tags?hl=es -->
+    
+        <!-- Elements que contenen informació per a compartir a XXSS (OpenGraph) -->
+        <!-- https://ogp.me/ -->
+
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+
+        <!-- header: capçalera -->
+        <header>
+            <!-- nav: navegació 
+                sobre diferents parts de la pàgina -->
+            <nav>
+                <!-- '#' enllaç a un contingut de la mateixa pàgina -->
+                <a href="#entrades">Entrades</a>
+                <a href="#historia">Historia</a>
+                <!-- './fitxer.html' enllaç a un altre fitxer  -->
+                <a href="./contact.html">Contacta'm</a>
+            </nav>
+        </header>
+        <!-- main: contingut principal -->
+        <main>
+            <aside>
+                <h4>Curiositats</h4>
+                <p>
+                    Sabies que hi ha més estats possibles del cub de Rubik que segons té l'univers?
+                </p>
+            </aside>
+            <!-- secció n.1: entrades al blog -->
+            <section id="entrades">
+                <header>
+                    <h1>Entrades al blog</h1>
+                    <h2>Benvingut!</h2>
+                </header>
+                <article>
+                    <h3>Cub 3x3x3</h3>
+                    <!-- atribut title: es mostra amb la imatge, normalment amb l'esdeveniment "hover" (passar el ratolí a sobre de la imatge) -->
+                    <!-- atribut alt: es mostra quan no es carrega la imatge, també l'utilitza el lector de pantalla -->
+                    <img src="images/333.webp" title="Imatge d'un cub 3x3x3" alt="Imatge d'un cub 3x3x3"
+                        width="20%" height="20%">
+                    <p>Avui m'he comprat el 2n cub de l'edició de Moyang.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium volutpat tellus. Praesent imperdiet purus vitae vehicula imperdiet. Proin sit amet ipsum eu turpis fermentum consectetur eu tempus ante. Cras sed turpis eget massa maximus feugiat. Etiam in mauris diam. Donec posuere metus id fermentum imperdiet. Nullam suscipit arcu vitae erat gravida gravida. Integer eu lacus at enim hendrerit cursus. Sed vitae porttitor sem. Vivamus diam nibh, lacinia eu volutpat et, elementum non neque. Duis imperdiet justo at tortor lobortis, non tincidunt ante fringilla. Cras a imperdiet diam.</p>
+                    <p>Nam non maximus metus, nec tempor ex. Quisque augue sem, facilisis ut enim eu, porta tristique orci. Donec vestibulum leo ut posuere congue. Morbi efficitur ornare lacus, sit amet dapibus quam aliquam ac. Pellentesque egestas convallis metus ac sollicitudin. Phasellus condimentum odio ut est tincidunt, et elementum sapien porttitor. Vestibulum convallis massa at libero accumsan, sed interdum neque congue. Donec vitae quam nec nibh pharetra efficitur scelerisque et diam. Aliquam tempus sagittis felis et efficitur. Morbi in purus tincidunt, iaculis urna ac, laoreet sapien. Mauris sapien ligula, dictum vitae mattis vel, tempus ut tellus. Suspendisse condimentum dictum lectus sit amet rutrum. Vestibulum volutpat hendrerit malesuada. Pellentesque eget efficitur ante, sed accumsan ipsum.</p> 
+                    <p>Suspendisse mattis, arcu a condimentum vehicula, dolor mi ullamcorper velit, vitae elementum leo mi non libero. Integer quis augue turpis. Etiam ut ante sodales, finibus sapien quis, mattis urna. Aliquam non dui vel felis suscipit aliquam. Phasellus eu molestie magna. Cras a eleifend lorem, non ullamcorper nibh. Cras pellentesque erat vitae diam placerat, ut egestas justo consectetur. Curabitur scelerisque lorem nunc, quis scelerisque lorem dapibus non. Nam non ex sed sapien sodales imperdiet in quis ante. Ut in massa velit. Aliquam et interdum quam, sed condimentum ante. In pulvinar bibendum mauris id imperdiet. Aenean nunc nisi, venenatis gravida malesuada in, aliquet non massa. Proin finibus semper lacus, vel cursus quam fermentum in. In rhoncus efficitur lorem, dapibus rutrum leo. Etiam ex massa, rutrum sed pharetra ac, tempor ornare odio.</p>
+                </article>
+                <!-- hr: línia horitzontal que separa contingut -->
+                <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/hr -->
+                <hr>
+                <article>
+                    <h3>Pyraminx</h3>
+                    <p>Quina passada resoldre un tetraedre!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium volutpat tellus. Praesent imperdiet purus vitae vehicula imperdiet. Proin sit amet ipsum eu turpis fermentum consectetur eu tempus ante. Cras sed turpis eget massa maximus feugiat. Etiam in mauris diam. Donec posuere metus id fermentum imperdiet. Nullam suscipit arcu vitae erat gravida gravida. Integer eu lacus at enim hendrerit cursus. Sed vitae porttitor sem. Vivamus diam nibh, lacinia eu volutpat et, elementum non neque. Duis imperdiet justo at tortor lobortis, non tincidunt ante fringilla. Cras a imperdiet diam.</p>
+                    <p>Nam non maximus metus, nec tempor ex. Quisque augue sem, facilisis ut enim eu, porta tristique orci. Donec vestibulum leo ut posuere congue. Morbi efficitur ornare lacus, sit amet dapibus quam aliquam ac. Pellentesque egestas convallis metus ac sollicitudin. Phasellus condimentum odio ut est tincidunt, et elementum sapien porttitor. Vestibulum convallis massa at libero accumsan, sed interdum neque congue. Donec vitae quam nec nibh pharetra efficitur scelerisque et diam. Aliquam tempus sagittis felis et efficitur. Morbi in purus tincidunt, iaculis urna ac, laoreet sapien. Mauris sapien ligula, dictum vitae mattis vel, tempus ut tellus. Suspendisse condimentum dictum lectus sit amet rutrum. Vestibulum volutpat hendrerit malesuada. Pellentesque eget efficitur ante, sed accumsan ipsum.</p> 
+                    <p>Suspendisse mattis, arcu a condimentum vehicula, dolor mi ullamcorper velit, vitae elementum leo mi non libero. Integer quis augue turpis. Etiam ut ante sodales, finibus sapien quis, mattis urna. Aliquam non dui vel felis suscipit aliquam. Phasellus eu molestie magna. Cras a eleifend lorem, non ullamcorper nibh. Cras pellentesque erat vitae diam placerat, ut egestas justo consectetur. Curabitur scelerisque lorem nunc, quis scelerisque lorem dapibus non. Nam non ex sed sapien sodales imperdiet in quis ante. Ut in massa velit. Aliquam et interdum quam, sed condimentum ante. In pulvinar bibendum mauris id imperdiet. Aenean nunc nisi, venenatis gravida malesuada in, aliquet non massa. Proin finibus semper lacus, vel cursus quam fermentum in. In rhoncus efficitur lorem, dapibus rutrum leo. Etiam ex massa, rutrum sed pharetra ac, tempor ornare odio.</p>
+                </article>
+            </section>
+            <!-- secció n.2: història -->
+            <section id="historia">
+                <header>
+                    <h1>Secció d'història🤔</h1>
+                </header>
+                <article>
+                    <h3>Ernő Rubik, l'arquitecte del 3x3x3</h3>
+                    <p>Ernő Rubik (Budapest, 13 de juliol 1944) és escultor, arquitecte i dissenyador de l'Escola d'Arts Comercials de Budapest. També és autor del mundialment conegut Cub de Rubik, premiat amb el Spiel des Jahres (El joc de l'any) el 1980, però no és l'únic trencaclosques mecànic inventat per ell. Igualment ho són la Serp de Rubik, el Rubik's Magic o, el més recent, el Rubik 360.</p>
+                    <p>El 1962 va iniciar els seus estudis d'arquitectura a la Universitat de tecnologia de Budapest i es llicencià el 1967. Continuà amb la seva formació en arquitectura i disseny a l'Acadèmia Hongaresa d'Arts Aplicades. En acabar els seus estudis el 1971, Rubik va començar a treballar com a professor d'arquitectura a la Universitat d'Arts i Disseny Moholy-Nagy. Va ser allà on, el 1974, va dissenyar el primer prototip del que després seria el Cub de Rubik, que en principi tan sols era una eina per a treballar amb els seus estudiants.[1] A principis dels anys 80, el Cub de Rubik va començar a comercialitzar-se arreu del món. Al llarg d'aquella dècada, Rubik va compaginar la seva tasca de docent amb el desenvolupament de nous jocs. El 1990 fou nomenat president de l'Acadèmia Hongaresa d'Enginyeria. El seu darrer joc, conegut com a Rubik 360, va sortir al mercat en 2009.</p>
+                </article>
+            </section>         
+        </main>
+        <!-- footer: peu de pàgina -->
+        <footer>
+             Fet amb 👍❤️ per &#169; Eric Garcia
+        </footer>
+
+    </body>
+</html>

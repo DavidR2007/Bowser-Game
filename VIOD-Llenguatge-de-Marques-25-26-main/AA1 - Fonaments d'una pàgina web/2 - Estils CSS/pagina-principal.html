@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ca">
+    <head>
+        <meta charset="UTF-8">
+        <title>Propietats CSS</title>
+
+        <!-- #3 Aplicar estils mitjançant un enllaç
+            a styles.css -->
+        <link rel="stylesheet" href="styles.css" />
+
+    </head>
+    <body>
+        <!-- #1 Aplicar estils mitjançant atributs -->
+        <h1 style="color: red;">Propietats CSS</h1>
+
+        <!-- 'id' identifica un únic element -->
+        <!-- 'class' es pot assignar a diferents elements
+                Exemple: classe 'element-style' defineix
+                    l'estil que hem aplicat amb <style> -->
+
+        <p class="element-style" id="primer-paragraf" style="font-size: 2rem; color: blueviolet;">Avui és la primera classe pràctica de CSS.</p>
+        <p class="element-style" style="font-weight: 800; font-style: italic;">Aplico estils amb l'element &lt;style&gt;</p>
+
+
+        <!-- Contingut de l'anterior exemple -->
+
+        <!-- p: paràgraf -->
+        <!-- strong: defineix el text en negreta -->
+        <!-- em: defineix el text en cursiva -->
+        <p><em>Silent Hill 2</em> és un videojoc de <strong>terror</strong>.</p>
+
+        <p>Altres del mateix gènere són, per ordre de llançament:</p>
+        <!-- ol (Ordered List): Defineix una llista ordenada -->
+        <ol>
+            <!-- li: Element dins d'una llista -->
+            <li>Alien Isolation (2013)</li>
+            <li>Resident Evil 7 (2017)</li>
+            <li>Parasite Eve (1998)</li>
+        </ol>
+
+        <p>Algunes pel·lícules del mateix gènere són (sense ordre):</p>
+        <!-- ul (Unordered List): Defineix una llista desordenada -->
+        <ul>
+            <!-- li: Element dins d'una llista -->
+            <li>Monster House</li>
+            <li>El resplandor</li>
+            <li>La Ouija</li>
+        </ul>
+    </body>
+
+    <!-- #2 Aplicar estils mitjançant l'element <style> -->
+    <style>
+
+        /* seleccionem els elements amb class='element-style' */
+        .element-style {
+            background-color: greenyellow;
+        }
+
+    </style>
+</html>

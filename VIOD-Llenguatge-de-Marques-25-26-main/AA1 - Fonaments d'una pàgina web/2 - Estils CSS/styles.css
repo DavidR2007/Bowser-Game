@@ -1,0 +1,60 @@
+body {
+    background-color: rgb(228, 228, 228);
+    font-size: 2rem;
+}
+
+/* seleccionem l'element amb id='primer-paragraf' */
+#primer-paragraf {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* seleccionem tots els elements <li> */
+li {
+    font-family: fantasy;
+}
+
+.serifa {
+    font-family: serif;
+}
+
+.no-serifa {
+    font-family: sans-serif;
+}
+
+/* Selecciona els <span> dins d'una classe 'no-serifa' */
+.no-serifa span {
+    background-color: yellow;
+}
+
+.mono-space {
+    font-family: monospace;
+}
+
+.fantasy {
+    font-family: fantasy;
+}
+
+.caixa {
+    background-color: rgb(141, 242, 242);
+
+    border: solid;
+    border-color: rgb(255, 6, 6);
+
+    /* margin: marge cap a fora */
+    margin: 15px;
+
+    /* padding: espai intern
+        entre el border i el content */
+    padding: 10px;
+}
+
+.caixa2 {
+    background-color: rgb(141, 242, 198);
+
+    border: solid;
+    border-color: rgb(255, 139, 6);
+
+    /* margin: marge cap a fora */
+    /* margin: 15px; */
+    margin: 3px;
+}

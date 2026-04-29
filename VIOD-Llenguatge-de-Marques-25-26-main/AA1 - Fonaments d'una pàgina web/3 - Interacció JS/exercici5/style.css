@@ -1,0 +1,87 @@
+/* https://www.dafont.com/pkmn-rbygsc.font */
+@font-face {
+    font-family: "PKMN";
+    src: url("./fonts/PKMN-RBYGSC.ttf");
+}
+
+body {
+    /* Color */
+    background-color: #ebdbb9;
+    
+    /* Centra els elements amb display: inline (p.ex. <img>) i inline-block */
+    /* - Ens assegurem que les imatges estaran centrades horitzonalment,
+            els <div> els podrem centrar amb margin: 0 auto; */
+    text-align: center;
+    
+    /* Font */
+    font-family: "PKMN", Arial, sans-serif;
+}
+
+#pokemon-img {
+    /* Dimensions i color */
+    width: 300px;
+    background-color: white;
+        
+    /* Border */
+    border: 4px solid black;
+    border-radius: 10px;
+
+    /* Marge inferior */
+    margin-bottom: 20px;
+}
+
+/* Contenidor que engloba els 3 poke-btn */
+#botons-container {
+    /* Centra tots els elements inline i inline-block */
+    text-align: center;
+
+    /* Marge inferior */
+    margin-bottom: 30px;
+}
+
+.poke-btn {
+    /* display: inline-block; -> Es genera un block i es posiciona com si fos un element inline */
+    /* Més informació: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/display#inline-block */
+    display: inline-block;
+
+    /* Marge extern, 0 vertical i 15px horitzontal */
+    margin: 0 15px;
+
+    /* Marge intern, entre la caixa i la imatge */
+    padding: 10px;
+}
+
+/* Imatge dins del botó */
+.poke-btn img {
+    /* Dimensions */
+    width: 70px;
+    height: auto; /* Manté la proporció de la imatge (1:1) */
+}
+
+/* Bafarada */
+#bafarada {
+    /* Dimensions i color */
+    width: 600px;
+    color: #3050c8;
+    background-color: white;
+
+    /* Border */
+    border: 4px solid #a0d0e0;
+    border-radius: 20px;
+    
+    /* Marges */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#text {
+    /* Marges */
+    margin-top: 0;
+
+    /* Font */
+    font-size: 20px;
+    text-align: left;
+
+    /* Extra: ombra */
+    text-shadow: 2px 2px 0px rgba(195, 195, 195, 0.8);
+}

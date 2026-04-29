@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Contacta'm</title>
+    </head>
+    <body>
+        <header>
+            <!-- nav: navegació 
+                sobre diferents parts de la pàgina -->
+            <nav>
+                <!-- '#' enllaç a un contingut de la mateixa pàgina -->
+                <a href="./etiquetes-semantiques.html#entrades">Entrades</a>
+                <a href="./etiquetes-semantiques.html#historia">Historia</a>
+                <!-- './fitxer.html' enllaç a un altre fitxer  -->
+                <a href="#">Contacta'm</a>
+            </nav>
+        </header>
+        <main>
+
+            <!-- S'executa el mètode "post" a la direcció "/" del servidor -->
+            <!-- Hi ha diversos mètodes, "post" és el més habitual per enviar informació -->
+            <!-- La direcció "/" indica que la informació s'envia a la pàgina principal del domini web -->
+            <!-- Des del servidor, es podria definir que "post" enviés un correu de benvinguda a l'usuari que ha contactat, guardar la seva informació a una base de dades, subscriure'l al procediment de la newsletter, etc. -->
+            <form method="post" action="/">
+
+                <fieldset>
+                    <legend>Dades de contacte</legend>
+                    <div>
+                        <!-- El mateix valor a "label" i a "id" provoca que fent click al label se seleccioni l'input -->
+                        <label for="fname">Nom:</label>
+                        <!-- El valor de name és el valor que utilitza el servidor per rebre el valor de l'input -->
+                        <input type="text" id="fname" name="name" placeholder="Eric Garcia Reverter">
+                    </div>
+                    <div>
+                        <label for="femail">Correu electrònic:</label>
+                        <input type="email" id="femail" name="email" placeholder="eric.garcia@enti.cat">
+                        
+                    </div>
+                </fieldset>
+
+                <!-- Motiu de la consulta -->
+                <fieldset>
+                    <legend>Motiu de la consulta</legend>
+                    
+                    <!-- Selecció amb radio buttons (una sola opció) -->
+                    <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/radio -->
+                    <div>
+                        <label>Tema:</label>
+
+                        <!-- El mateix valor a "label" i a "id" provoca que fent click al label se seleccioni l'input -->
+                        <input type="radio" id="contactChoice1" name="contact" value="news" />
+                        <!-- El valor de name és el valor que utilitza el servidor per rebre el valor de l'input -->
+                        <label for="contactChoice1">Notícies sobre cubs de Rubik</label>
+
+                        <input type="radio" id="contactChoice2" name="contact" value="tutorial" />
+                        <label for="contactChoice2">Dubte sobre tutorial</label>
+
+                        <input type="radio" id="contactChoice3" name="contact" value="competir" />
+                        <label for="contactChoice3">Competir amb speedcubing</label>
+                    </div>
+
+                    <!-- Selecció amb checkbox (múltiples opcions) -->
+                    <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/checkbox -->
+                    <div>
+                        <label>Hobbies:</label>
+
+                        <input type="checkbox" id="fvideojocs" name="videojocs" value="videojocs" />
+                        <label for="fvideojocs">Videojocs</label>
+
+                        <input type="checkbox" id="fesports" name="esports" value="esports" />
+                        <label for="fesports">Esports</label>
+
+                        <input type="checkbox" id="fdibuix" name="dibuix" value="dibuix" />
+                        <label for="fdibuix">Dibux</label>
+                    </div>
+
+                    <!-- Selecció amb desplegable -->
+                    <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/select -->
+                    <div>
+                        <label>Urgència:</label>
+                        <select name="urgency">
+                            <option value="baixa">Baixa</option>
+                            <option value="mitjana">Mitjana</option>
+                            <option value="alta">Alta</option>
+                        </select>
+                    </div>
+
+                    <!-- Input numèric -->
+                    <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/number -->
+                    <div>
+                        <label for="cubeCount">Quants cubs tens? (1-100)</label>
+                        <input type="number" id="cubeCount" name="cubeCount" min="1" max="100">
+                    </div>
+
+                    <!-- Input de fitxer -->
+                    <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/file -->
+                    <div>
+                        <label for="cubeImage">Vols adjuntar una foto teva com a soci del club de fans de Rubiks? :)</label>
+                        <input type="file" name="cubeImage" accept="image/png, image/jpeg">
+                    </div>
+
+                    <!-- Àrea de text -->
+                    <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/textarea -->
+                    <div>
+                        <label>Comentaris addicionals:</label>
+                        <textarea name="comments" rows="4" cols="60" placeholder="Escriu aquí..."></textarea>
+                    </div>
+                </fieldset>
+
+                <!-- label: text que introdueix l'input -->
+                <!-- <label for="fname">Nom: </label> -->
+                <!-- <input type="text" id="fname" name="fname"> -->
+
+                <!-- <label for="fpassword">Contrasenya: </label> -->
+                <!-- <input type="password" id="fpassword" name="fpassword"> -->
+                
+                <!-- <label for="fcolor">Color: </label> -->
+                <!-- <input type="color" id="fcolor" name="fcolor"> -->
+
+                <!-- <label for="fdate">Dia: </label> -->
+                <!-- <input type="date" id="fdate" name="fdate"> -->
+                
+                <!-- Selecció d'un número -->
+                <!-- type:number -->
+                
+                <!-- Radio button -->
+                <!-- type:radio -->
+                
+                <!-- Checkbox -->
+                <!-- type:checkbox -->
+
+            </form>
+        </main>
+    </body>
+</html>
