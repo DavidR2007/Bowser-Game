@@ -1,9 +1,154 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
-    </head>
-    <body>
-        <script type="module" src="./main.js"></script>
-    </body>
+<head>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+
+    <!-- Firebase -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore, collection, addDoc, getDocs, query, orderBy, limit }
+            from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDDLJzqJJHPtnyHW9gpfPlmXuDVgxAbmY8",
+            authDomain: "base-bowserrank.firebaseapp.com",
+            projectId: "base-bowserrank",
+            storageBucket: "base-bowserrank.appspot.com",
+            messagingSenderId: "528141298917",
+            appId: "1:528141298917:web:e3fbf717a34011b16ef80c",
+            measurementId: "G-FNNCPS2BHL"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Hacer accesible desde main.js
+        window.db = db;
+        window.addDoc = addDoc;
+        window.collection = collection;
+        window.getDocs = getDocs;
+        window.query = query;
+        window.orderBy = orderBy;
+        window.limit = limit;
+    </script>
+
+    <style>
+
+body {
+    margin: 0;
+    text-align: center;
+    background: radial-gradient(circle at 50% 30%, 
+        #ff3b00 0%, 
+        #d12a00 15%, 
+        #7a1a00 35%, 
+        #3a0d0d 55%, 
+        #1a0000 75%, 
+        #000000 100%
+    );
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+
+    background: radial-gradient(circle at 50% 30%,
+        rgba(255, 80, 0, 0.35),
+        rgba(0, 0, 0, 0)
+    );
+
+    mix-blend-mode: screen;
+    animation: lavaPulse 4s ease-in-out infinite;
+}
+
+@keyframes lavaPulse {
+    0% {
+        opacity: 0.25;
+        transform: scale(1);
+        filter: blur(20px);
+    }
+    50% {
+        opacity: 0.55;
+        transform: scale(1.05);
+        filter: blur(28px);
+    }
+    100% {
+        opacity: 0.25;
+        transform: scale(1);
+        filter: blur(20px);
+    }
+}
+
+
+        #Ranking {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 230px;
+            padding: 15px;
+
+            background:
+                repeating-linear-gradient(
+                    45deg,
+                    rgba(43,15,15,0.25) 0px,
+                    rgba(43,15,15,0.25) 6px,
+                    rgba(26,5,5,0.25) 6px,
+                    rgba(26,5,5,0.25) 12px
+                ),
+                linear-gradient(135deg, #c61700, #c62900);
+
+            border: 3px solid #a12a2a;
+            border-radius: 10px;
+            color: #ffb3a1;
+            font-family: 'Arial Black', sans-serif;
+
+            box-shadow: 4px 4px 0 #3d0c0c;
+        }
+
+        #Ranking h2 {
+            margin: 0 0 10px 0;
+            font-size: 22px;
+            text-align: center;
+            color: #ff4d2e;
+            text-shadow: 2px 2px 0 #3d0c0c;
+        }
+
+        #Ranking ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #Ranking li {
+            padding: 6px 0;
+            border-bottom: 2px solid #5c1a1a;
+            font-size: 18px;
+        }
+
+        #Ranking li:last-child {
+            border-bottom: none;
+        }
+
+        /* Color de números y puntuaciones */
+        .rank-num {
+            color: #ff7a3b;
+            font-weight: bold;
+        }
+
+        .rank-score {
+            color: #ffb38a;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Ranking"></div>
+
+    <script type="module" src="./main.js"></script>
+</body>
 </html>

@@ -31,6 +31,9 @@ var playerName;
 function preload ()
 {
     this.load.audio('hitSound', 'assets/AUDIO/HITSOUND.wav');
+    this.load.audio('clock', 'assets/AUDIO/CLOCK.wav');
+    this.load.audio('shield', 'assets/AUDIO/shield.wav');
+    this.load.audio('heart', 'assets/AUDIO/heart.wav');
 
     this.load.image('background', 'assets/background.png');
     this.load.image('bomb', 'assets/fireball.png');
@@ -50,9 +53,7 @@ function preload ()
 
 function create ()
 {
-    // -----------------------------------
-    // PEDIR NOMBRE DEL JUGADOR
-    // -----------------------------------
+    // PEDIR NOMBRE 
     playerName = prompt("Introduce tu nombre:");
     if (!playerName || playerName.trim() === "") playerName = "Jugador";
 
@@ -65,10 +66,11 @@ function create ()
 
     // AUDIO
     this.hitSound = this.sound.add('hitSound', { volume: 0.5 });
+    this.heartSound = this.sound.add('heart', { volume: 0.5 });
+    this.clockSound = this.sound.add('clock', { volume: 0.5 });
+    this.shieldSound = this.sound.add('shield', { volume: 0.5 });
 
-    // -------------------------------
-    // SISTEMA DE PUNTUACIÓN
-    // -------------------------------
+    // SISTEMA DE PUNTUACION
     this.score = 0;
     this.highscore = parseInt(localStorage.getItem("highscore")) || 0;
     this.highscoreName = localStorage.getItem("highscoreName") || "Nadie";
@@ -110,18 +112,13 @@ function create ()
         }
     };
 
-    // -------------------------------
-    // TEXTURA DE ESTELA
-    // -------------------------------
+    // ESTELA
     const g = this.make.graphics({ x: 0, y: 0, add: false });
     g.fillStyle(0xffffff, 1);
     g.fillCircle(4, 4, 4);
     g.generateTexture('trailParticle', 8, 8);
     g.destroy();
 
-    // -------------------------------
-    // ESTELA (DEBAJO DEL PLAYER)
-    // -------------------------------
     this.trailParticles = this.add.particles('trailParticle');
     this.trail = this.trailParticles.createEmitter({
         speed: 0,
@@ -131,9 +128,7 @@ function create ()
         frequency: 25
     });
 
-    // -------------------------------
-    // PLAYER (ENCIMA DE LA ESTELA)
-    // -------------------------------
+    // PLAYER
     player = new Player(this, 100, 450, 3, playerName);
     this.trail.startFollow(player.physicsSprite);
 
@@ -141,7 +136,6 @@ function create ()
     bombs = new Bombs(this);
     this.powerUps = this.physics.add.group();
 
-    // Colisión con bombas
     this.physics.add.overlap(
         player.physicsSprite,
         bombs.physicSpritesGroup,
@@ -192,38 +186,56 @@ function create ()
 
         this.score += 50;
         this.scoreText.setText("Score: " + this.score);
-
+    
+        // POWER HEART
         if (power.type === 'heart' && player.lives < 3) {
             player.lives++;
             this.updateHearts(player.lives);
+            this.heartSound.play();   // ← SONIDO
         }
-
+    
+        // POWER SHIELD
         if (power.type === 'shield') {
             player.invulnerable = true;
             player.physicsSprite.setTint(0x00ffff);
-
+    
+            this.shieldSound.play();  // SONIDO
+    
             this.time.delayedCall(3000, () => {
                 player.invulnerable = false;
                 player.physicsSprite.clearTint();
             });
         }
-
+    
+        // POWER SLOW
         if (power.type === 'slow') {
             bombs.speedMultiplier = 0.5;
+    
+            this.clockSound.play();   // SONIDO
+    
             this.time.delayedCall(3000, () => bombs.speedMultiplier = 1);
         }
-
+    
         power.destroy();
     }
+    
 
     // GAME OVER
-    this.gameOver = () => {
+    this.gameOver = async () => {
 
-        // Guardar récord SOLO si es mayor
         if (this.score > this.highscore) {
             localStorage.setItem("highscore", this.score);
             localStorage.setItem("highscoreName", playerName);
         }
+
+        await addDoc(collection(db, "scores"), {
+            name: playerName,
+            score: this.score,
+            date: Date.now()
+        });
+
+        // 🔥 Actualizar ranking HTML
+        mostrarRankingHTML();
 
         const bestName = localStorage.getItem("highscoreName") || "Nadie";
         const bestScore = localStorage.getItem("highscore") || 0;
@@ -279,6 +291,38 @@ function create ()
         }
     });
 }
+
+// --------------------------------------------------
+// 🔥 FUNCIÓN PARA MOSTRAR RANKING EN HTML
+// --------------------------------------------------
+async function mostrarRankingHTML() {
+    const rankingDiv = document.getElementById("Ranking");
+
+    const q = query(
+        collection(db, "scores"),
+        orderBy("score", "desc"),
+        limit(5)
+    );
+
+    const snapshot = await getDocs(q);
+
+    let html = "<h2>TOP 5</h2><ul>";
+
+    let pos = 1; 
+
+    snapshot.forEach(doc => {
+        const data = doc.data();
+        html += `<li><strong>${pos}.</strong> ${data.name}: <span style="color:#00ffea">${data.score}</span></li>`;
+        pos++; 
+    });
+
+    html += "</ul>";
+
+    rankingDiv.innerHTML = html;
+}
+
+mostrarRankingHTML();
+
 
 function update()
 {
